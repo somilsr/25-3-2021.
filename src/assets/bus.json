@@ -1,0 +1,9 @@
+{
+    "1001":{"coach_type":"Non AC","fare":300,"location":"Dhaka to Comilla","name":"Great room","seat":36,"time":"10:00 PM"},
+    "1002":{"coach_type":"AC","fare":800,"location":"Dhaka to Comilla","name":"Great room","seat":36,"time":"10:00 PM"},
+    "-1003":{"coach_type":"AC","fare":500,"location":"Dhaka to Comilla","name":"Dining hall","seat":36,"time":"12:00 PM"},
+    "-LAl5JMzVHSow5HPe-QZ":{"coach_type":"AC","fare":5000,"location":"Dhaka to Comilla","name":"Party hall","seat":36,"time":"11:00 PM"},
+    "-1004":{"coach_type":"AC","fare":13000,"location":"Dhaka to Comilla","name":"Concert hall","seat":36,"time":"3:00 PM"}
+
+    
+}

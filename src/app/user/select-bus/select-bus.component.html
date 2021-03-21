@@ -1,0 +1,147 @@
+<!-- <table>
+  <tr *ngFor="let employee of allEmployees|async">
+      <td>{{employee.empId}}</td>
+      <td>{{employee.name}}</td>
+      <td>{{employee.Level}}</td>
+      <td>{{employee.Password}}</td>
+  
+  </tr>
+  
+  </table> -->
+
+<div class="container">
+  <div class="row justify-content-center pb-5 pt-3">
+    <div class="col-md-5 block mt-3">
+      
+      
+      
+      
+      <form class="form-inline" >
+        <div class="form-group mb-2">
+          <label for="staticEmail2" class="sr-only">Employee ID</label>
+          <input type="text" required class="form-control-plaintext" #tbName id="EmpID" value="Employee ID"/>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2" (click)="ValidateEmp(lblName.id, tbName.value)" id="bt">
+
+          
+        <!-- <button type="submit" class="btn btn-primary mb-2" (click)="validateForm()" id="bt"> -->
+        <!-- <button type="submit" class="btn btn-primary mb-2" id="bt"> -->
+          Confirm identity
+        </button>
+
+        <table>
+          <tr *ngFor="let employee of GetEmployee|async">
+              <td>{{employee.empId}}</td>
+              <td>{{employee.name}}</td>
+             
+          
+          </tr>
+          
+          </table>
+
+        <ng-container>
+          <p>
+              <label style="color: brown; font-size: large;" #lblName id="lblName">
+      
+              </label>
+          </p>
+      </ng-container>
+      </form>
+<!-- [disable]=!empIdValidate.valid -->
+      <form (ngSubmit)="SearchBus(f)" #f="ngForm">
+        <div class="row">
+          <div class="form-group col-md-6">
+            <label>Arriving Time</label>
+            <select
+              (change)="leave($event)"
+              name="leaving_form"
+              required
+              ngModel
+              class="form-control form-control-sm"
+            >
+              <option value="">Select Time</option>
+              <option value="dhaka">1AM</option>
+              <option value="dhaka">2AM</option>
+              <option value="dhaka">3AM</option>
+              <option value="dhaka">4AM</option>
+              <option value="dhaka">5AM</option>
+              <option value="dhaka">6AM</option>
+              <option value="dhaka">7AM</option>
+              <option value="dhaka">8AM</option>
+              <option value="dhaka">9AM</option>
+              <option value="dhaka">10AM</option>
+              <option value="dhaka">11AM</option>
+              <option value="dhaka">12PM</option>
+              <option value="dhaka">13PM</option>
+              <option value="dhaka">14PM</option>
+              <option value="dhaka">15PM</option>
+              <option value="dhaka">16PM</option>
+              <option value="dhaka">17PM</option>
+              <option value="dhaka">18PM</option>
+              <option value="dhaka">19PM</option>
+              <option value="dhaka">20PM</option>
+              <option value="dhaka">21PM</option>
+              <option value="dhaka">22PM</option>
+              <option value="dhaka">23PM</option>
+              <option value="dhaka">24PM</option>
+              <option value="dhaka">12AM</option>
+            </select>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label>Departure Time</label>
+            <select
+              name="going_to"
+              [ngModel]="place[0].key"
+              required
+              class="form-control form-control-sm"
+            >
+              <!-- <option value="1109001">Comilla</option>
+              <option value="1109002">Chittagong</option>
+              <option value="1109003">Sylet</option>
+              <option value="1109004">Barishal</option> -->
+
+              <option *ngFor="let p of place" [value]="p.key">
+                {{ p.value }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group col-md-12">
+            <label for="">Check In Date</label>
+            <input
+              type="date"
+              required
+              class="form-control form-control-sm"
+              ngModel
+              name="depart_date"
+            />
+          </div>
+
+          <div class="form-group col-md-12">
+            <label for="">Check Out Date</label>
+            <input
+              type="date"
+              required
+              class="form-control form-control-sm"
+              ngModel
+              name="depart_date1"
+            />
+          </div>
+        </div>
+
+        <button
+          [disabled]="!f.valid"
+          class="btn btn-block mt-3 btn-search btn-sm"
+        >
+          <i class="fas mr-2 fa-search"></i> Search Room
+        </button>
+
+        <!-- <button class="btn btn-block mt-3 btn-search btn-sm"> <i class="fas mr-2 fa-search"></i> Search Buses</button>
+       -->
+      </form>
+    </div>
+  </div>
+</div>
