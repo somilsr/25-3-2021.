@@ -163,3 +163,7 @@ mdb publish
 
 npm install mssql
 npm install --save-exact express cors mysql
+
+
+
+https://localhost:44332/api/Employees/employee?Empid=100047

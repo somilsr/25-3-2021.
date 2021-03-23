@@ -1,3 +1,17 @@
+<p>  
+    Enter you name @Html.TextBox("Name")  
+    <input type="submit" id="SubmitName" value="Submit"/>  
+</p>   
+<script type="text/jscript">  
+    $('#SubmitName').click(function () {  
+        var url = "/Home/WelcomeMsg";  
+        var name = $('#Name').val();  
+        $.get(url, { input: name }, function (data) {  
+            $("#rData").html(data);  
+        });  
+    })  
+</script> 
+
 <table>
 <tr *ngFor="let employee of allEmployees|async">
     <td>{{employee.Empid}}</td>
